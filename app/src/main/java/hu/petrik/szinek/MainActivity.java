@@ -17,8 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private RelativeLayout layout;
+    //private RelativeLayout layout;
+    private RelativeLayout hatter;
     private TextView textSzin;
+    private TextView pirosSzin;
+    private TextView zoldSzin;
+    private TextView kekSzin;
     //private Random rnd;
     Slider slider1;
     Slider slider2;
@@ -42,9 +46,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
                 red = (int)slider.getValue();
-                layout.setBackgroundColor(Color.rgb(red, green, blue));
+                //layout.setBackgroundColor(Color.rgb(red, green, blue));
                 String szinSzoveges = String.format("(%d, %d, %d)", red, green, blue);
                 textSzin.setText(szinSzoveges);
+                String pirosSzoveg = String.format("Red : %d", (int)value);
+                pirosSzin.setText(pirosSzoveg);
+                textSzin.setBackgroundColor(Color.rgb(red, green, blue));
             }
         });
 
@@ -52,9 +59,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
                 green = (int)slider.getValue();
-                layout.setBackgroundColor(Color.rgb(red, green, blue));
+                //layout.setBackgroundColor(Color.rgb(red, green, blue));
                 String szinSzoveges = String.format("(%d, %d, %d)", red, green, blue);
                 textSzin.setText(szinSzoveges);
+                String zoldSzoveg = String.format("Green : %d", (int)value);
+                zoldSzin.setText(zoldSzoveg);
+                textSzin.setBackgroundColor(Color.rgb(red, green, blue));
             }
         });
 
@@ -62,9 +72,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
                 blue = (int)slider.getValue();
-                layout.setBackgroundColor(Color.rgb(red, green, blue));
+                //layout.setBackgroundColor(Color.rgb(red, green, blue));
                 String szinSzoveges = String.format("(%d, %d, %d)", red, green, blue);
                 textSzin.setText(szinSzoveges);
+                String kekSzoveg = String.format("Blue : %d", (int)value);
+                kekSzin.setText(kekSzoveg);
+                textSzin.setBackgroundColor(Color.rgb(red, green, blue));
             }
         });
 
@@ -89,7 +102,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init(){
-        layout = findViewById(R.id.layout);
+        //layout = findViewById(R.id.layout);
+        pirosSzin = findViewById(R.id.pirosSzin);
+        zoldSzin = findViewById(R.id.zoldSzin);
+        kekSzin = findViewById(R.id.kekSzin);
         textSzin = findViewById(R.id.textSzin);
         //rnd = new Random();
     }
